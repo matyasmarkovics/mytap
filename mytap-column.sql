@@ -319,7 +319,7 @@ RETURNS BOOLEAN
 BEGIN
     DECLARE ret BOOLEAN;
 
-    IF cdefault = '' OR cdefault IS NULL THEN
+    IF cdefault IS NULL THEN
         SELECT true into ret
           FROM information_schema.columns as db
          WHERE db.table_schema = dbname
